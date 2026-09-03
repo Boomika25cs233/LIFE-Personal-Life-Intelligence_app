@@ -9,6 +9,7 @@ class Responsibility:
         self.due_date = due_date
         self.owner = owner
         self.state = ResponsibilityState.DETECTED
+        self.waiting_for = None
 
     def __str__(self):
         return f"{self.title} - {self.state.value}"

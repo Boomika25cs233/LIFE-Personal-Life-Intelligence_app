@@ -27,8 +27,13 @@ class ResponsibilityStateEngine:
     def mark_due(self, responsibility):
         return self.transition(responsibility, ResponsibilityState.DUE)
 
-    def mark_waiting(self, responsibility):
+    def mark_waiting(self, responsibility, waiting_for):
+        responsibility.waiting_for = waiting_for
         return self.transition(responsibility, ResponsibilityState.WAITING)
+
+    def clear_waiting(self, responsibility):
+        responsibility.waiting_for = None
+        return self.complete(responsibility)
 
     def mark_overdue(self, responsibility):
         return self.transition(responsibility, ResponsibilityState.OVERDUE)

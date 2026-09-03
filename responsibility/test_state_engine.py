@@ -86,3 +86,21 @@ print("Before:", bill)
 engine.complete_from_evidence(bill, "Payment successful")
 
 print("After:", bill)
+
+bill.state = ResponsibilityState.DUE
+
+print("Before:", bill)
+
+engine.mark_waiting(bill, "Payment confirmation")
+
+print("After:", bill)
+print("Waiting for:", bill.waiting_for)
+
+print("Clearing waiting status:",
+      engine.clear_waiting(bill))
+
+print("Waiting for after clearing:",
+      bill.waiting_for)
+
+print("State after clearing:",
+      bill)
