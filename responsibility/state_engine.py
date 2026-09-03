@@ -94,3 +94,9 @@ class ResponsibilityStateEngine:
             return self.mark_overdue(responsibility)
 
         return False
+
+    def complete_from_evidence(self, responsibility, evidence):
+        if evidence:
+            return self.complete(responsibility)
+
+        return False

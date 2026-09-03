@@ -76,3 +76,13 @@ print("Before:", bill)
 engine.update_due_status(bill)
 
 print("After:", bill)
+
+print("\nTesting completion from evidence:")
+
+bill.state = ResponsibilityState.DUE
+
+print("Before:", bill)
+
+engine.complete_from_evidence(bill, "Payment successful")
+
+print("After:", bill)
