@@ -1,4 +1,5 @@
 from enum import Enum
+from datetime import date
 
 
 class ResponsibilityState(Enum):
@@ -84,3 +85,12 @@ class ResponsibilityStateEngine:
             return True
 
         return False        
+
+    def update_due_status(self, responsibility):
+        if responsibility.due_date is None:
+            return False
+
+        if date.today() > responsibility.due_date:
+            return self.mark_overdue(responsibility)
+
+        return False

@@ -1,5 +1,6 @@
 from responsibility import Responsibility
 from state_engine import ResponsibilityStateEngine, ResponsibilityState
+from datetime import date
 
 
 bill = Responsibility(
@@ -64,3 +65,14 @@ print("FOLLOW_UP → COMPLETED:",
       engine.transition(bill, ResponsibilityState.COMPLETED))
 
 print("Current state:", bill)
+
+print("\nTesting automatic overdue detection:")
+
+bill.state = ResponsibilityState.DUE
+bill.due_date = date(2026, 9, 1)
+
+print("Before:", bill)
+
+engine.update_due_status(bill)
+
+print("After:", bill)
