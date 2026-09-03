@@ -1,3 +1,6 @@
+from state_engine import ResponsibilityState
+
+
 class ResponsibilityGraph:
 
     def __init__(self):
@@ -32,30 +35,96 @@ class ResponsibilityGraph:
         return chain
 
     def predict_next(self, responsibility):
-        return self.get_next(responsibility)
+
+        # Predict next responsibility only after completion
+        if responsibility.state == ResponsibilityState.COMPLETED:
+            return self.get_next(responsibility)
+
+        return None
 
 
 if __name__ == "__main__":
+
     graph = ResponsibilityGraph()
 
-    graph.add_relationship("Vehicle Purchase", "Insurance")
-    graph.add_relationship("Vehicle Purchase", "Service")
-    graph.add_relationship("Insurance", "Renewal")
+    # Create simple responsibilities
+    class SimpleResponsibility:
 
-    print("Related to Vehicle Purchase:",
-          graph.get_related("Vehicle Purchase"))
+        def __init__(self, title, state):
+            self.title = title
+            self.state = state
 
-    print("Related to Insurance:",
-          graph.get_related("Insurance"))
+        def __hash__(self):
+            return hash(self.title)
 
-    print("Next after Vehicle Purchase:",
-          graph.get_next("Vehicle Purchase"))
+        def __eq__(self, other):
+            return self.title == other.title
 
-    print("Next after Service:",
-          graph.get_next("Service"))
 
-    print("Chain from Vehicle Purchase:",
-      graph.get_chain("Vehicle Purchase"))
+    vehicle = SimpleResponsibility(
+        "Vehicle Purchase",
+        ResponsibilityState.COMPLETED
+    )
 
-    print("Predicted next:",
-      graph.predict_next("Vehicle Purchase"))
+    insurance = SimpleResponsibility(
+        "Insurance",
+        ResponsibilityState.UPCOMING
+    )
+
+    service = SimpleResponsibility(
+        "Service",
+        ResponsibilityState.UPCOMING
+    )
+
+    renewal = SimpleResponsibility(
+        "Renewal",
+        ResponsibilityState.UPCOMING
+    )
+
+    # Add relationships
+    graph.add_relationship(vehicle, insurance)
+    graph.add_relationship(vehicle, service)
+    graph.add_relationship(insurance, renewal)
+
+    # Test related responsibilities
+    print(
+        "Related to Vehicle Purchase:",
+        [r.title for r in graph.get_related(vehicle)]
+    )
+
+    print(
+        "Related to Insurance:",
+        [r.title for r in graph.get_related(insurance)]
+    )
+
+    # Test next responsibility
+    next_responsibility = graph.get_next(vehicle)
+
+    print(
+        "Next after Vehicle Purchase:",
+        next_responsibility.title if next_responsibility else None
+    )
+
+    # Test chain
+    chain = graph.get_chain(vehicle)
+
+    print(
+        "Chain from Vehicle Purchase:",
+        [r.title for r in chain]
+    )
+
+    # Test state-aware prediction
+    predicted = graph.predict_next(vehicle)
+
+    print(
+        "Predicted next:",
+        predicted.title if predicted else None
+    )
+
+    # Test prediction when NOT completed
+    service.state = ResponsibilityState.UPCOMING
+
+    print(
+        "Prediction for unfinished Service:",
+        graph.predict_next(service)
+    )
