@@ -1,5 +1,5 @@
 from responsibility import Responsibility
-from state_engine import ResponsibilityStateEngine
+from state_engine import ResponsibilityStateEngine, ResponsibilityState
 
 
 bill = Responsibility(
@@ -25,3 +25,24 @@ print("Overdue:", bill)
 
 engine.complete(bill)
 print("Completed:", bill)
+
+print("\nTesting transition rules:")
+
+bill.state = ResponsibilityState.DETECTED
+
+print("DETECTED → VERIFIED:",
+      engine.transition(bill, ResponsibilityState.VERIFIED))
+
+print("VERIFIED → COMPLETED:",
+      engine.transition(bill, ResponsibilityState.COMPLETED))
+
+print("Current state:", bill)
+
+print("\nTesting DUE → WAITING:")
+
+bill.state = ResponsibilityState.DUE
+
+print("DUE → WAITING:",
+      engine.transition(bill, ResponsibilityState.WAITING))
+
+print("Current state:", bill)

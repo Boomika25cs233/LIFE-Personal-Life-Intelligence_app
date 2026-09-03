@@ -17,22 +17,61 @@ class ResponsibilityState(Enum):
 class ResponsibilityStateEngine:
 
     def verify(self, responsibility):
-        responsibility.state = ResponsibilityState.VERIFIED
+        return self.transition(responsibility, ResponsibilityState.VERIFIED)
 
     def mark_upcoming(self, responsibility):
-        responsibility.state = ResponsibilityState.UPCOMING
+        return self.transition(responsibility, ResponsibilityState.UPCOMING)
 
     def mark_due(self, responsibility):
-        responsibility.state = ResponsibilityState.DUE
+        return self.transition(responsibility, ResponsibilityState.DUE)
 
     def mark_waiting(self, responsibility):
-        responsibility.state = ResponsibilityState.WAITING
+        return self.transition(responsibility, ResponsibilityState.WAITING)
 
     def mark_overdue(self, responsibility):
-        responsibility.state = ResponsibilityState.OVERDUE
+        return self.transition(responsibility, ResponsibilityState.OVERDUE)
 
     def complete(self, responsibility):
-        responsibility.state = ResponsibilityState.COMPLETED
+        return self.transition(responsibility, ResponsibilityState.COMPLETED)
 
     def cancel(self, responsibility):
-        responsibility.state = ResponsibilityState.CANCELLED
+        return self.transition(responsibility, ResponsibilityState.CANCELLED)
+
+    ALLOWED_TRANSITIONS = {
+        ResponsibilityState.DETECTED: [
+            ResponsibilityState.VERIFIED,
+            ResponsibilityState.CANCELLED
+        ],
+        ResponsibilityState.VERIFIED: [
+            ResponsibilityState.UPCOMING,
+            ResponsibilityState.CANCELLED
+        ],
+        ResponsibilityState.UPCOMING: [
+            ResponsibilityState.DUE,
+            ResponsibilityState.CANCELLED
+        ],
+        ResponsibilityState.DUE: [
+            ResponsibilityState.WAITING,
+            ResponsibilityState.OVERDUE,
+            ResponsibilityState.COMPLETED,
+            ResponsibilityState.CANCELLED
+        ],
+        ResponsibilityState.WAITING: [
+            ResponsibilityState.OVERDUE,
+            ResponsibilityState.COMPLETED,
+            ResponsibilityState.CANCELLED
+        ],
+        ResponsibilityState.OVERDUE: [
+            ResponsibilityState.COMPLETED,
+            ResponsibilityState.CANCELLED
+        ],
+    }
+
+    def transition(self, responsibility, new_state):
+        current_state = responsibility.state
+
+        if new_state in self.ALLOWED_TRANSITIONS.get(current_state, []):
+            responsibility.state = new_state
+            return True
+
+        return False        
