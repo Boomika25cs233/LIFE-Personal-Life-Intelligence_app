@@ -8,6 +8,7 @@ class ResponsibilityState(Enum):
     DUE = "due"
     WAITING = "waiting"
     OVERDUE = "overdue"
+    FOLLOW_UP = "follow_up"
     COMPLETED = "completed"
     RECURRING = "recurring"
     EXPIRED = "expired"
@@ -30,6 +31,9 @@ class ResponsibilityStateEngine:
 
     def mark_overdue(self, responsibility):
         return self.transition(responsibility, ResponsibilityState.OVERDUE)
+
+    def follow_up(self, responsibility):
+        return self.transition(responsibility, ResponsibilityState.FOLLOW_UP)
 
     def complete(self, responsibility):
         return self.transition(responsibility, ResponsibilityState.COMPLETED)
@@ -62,6 +66,11 @@ class ResponsibilityStateEngine:
             ResponsibilityState.CANCELLED
         ],
         ResponsibilityState.OVERDUE: [
+            ResponsibilityState.FOLLOW_UP,
+            ResponsibilityState.COMPLETED,
+            ResponsibilityState.CANCELLED
+        ],
+        ResponsibilityState.FOLLOW_UP: [
             ResponsibilityState.COMPLETED,
             ResponsibilityState.CANCELLED
         ],

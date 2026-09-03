@@ -46,3 +46,21 @@ print("DUE → WAITING:",
       engine.transition(bill, ResponsibilityState.WAITING))
 
 print("Current state:", bill)
+
+print("\nTesting OVERDUE → FOLLOW_UP:")
+
+bill.state = ResponsibilityState.OVERDUE
+
+print("OVERDUE → FOLLOW_UP:",
+      engine.transition(bill, ResponsibilityState.FOLLOW_UP))
+
+print("Current state:", bill)
+
+print("\nTesting FOLLOW_UP → COMPLETED:")
+
+bill.state = ResponsibilityState.FOLLOW_UP
+
+print("FOLLOW_UP → COMPLETED:",
+      engine.transition(bill, ResponsibilityState.COMPLETED))
+
+print("Current state:", bill)
