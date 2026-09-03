@@ -31,6 +31,9 @@ class ResponsibilityGraph:
 
         return chain
 
+    def predict_next(self, responsibility):
+        return self.get_next(responsibility)
+
 
 if __name__ == "__main__":
     graph = ResponsibilityGraph()
@@ -53,3 +56,6 @@ if __name__ == "__main__":
 
     print("Chain from Vehicle Purchase:",
       graph.get_chain("Vehicle Purchase"))
+
+    print("Predicted next:",
+      graph.predict_next("Vehicle Purchase"))
