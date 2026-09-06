@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+*.db
+learning_state.json
+venv/
