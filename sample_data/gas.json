@@ -1,0 +1,5 @@
+[
+  {"responsibility": "gas_refill", "date": "2026-07-01", "amount": 850},
+  {"responsibility": "gas_refill", "date": "2026-07-30", "amount": 850},
+  {"responsibility": "gas_refill", "date": "2026-08-28", "amount": 900}
+]
