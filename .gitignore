@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+venv/
+.venv/
+
+# Database
+backend/life.db
+backend/*.db-journal
+
+# Environment
+.env
+
+# OS
+.DS_Store
+Thumbs.db

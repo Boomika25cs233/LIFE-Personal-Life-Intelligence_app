@@ -1,0 +1,480 @@
+[
+  {
+    "id": 1,
+    "source": "SMS",
+    "text": "Dear customer, your electricity bill of ₹2850 is due on 22 September.",
+    "expected_event_type": "ELECTRICITY_BILL",
+    "expected_category": "FINANCE"
+  },
+  {
+    "id": 2,
+    "source": "SMS",
+    "text": "URGENT!!! Your ELECTRICITY BILL of Rs. 3,200 is DUE tomorrow!!!",
+    "expected_event_type": "ELECTRICITY_BILL",
+    "expected_category": "FINANCE"
+  },
+  {
+    "id": 3,
+    "source": "SMS",
+    "text": "Power bill payment of INR 1500 pending, due 05/10/2026",
+    "expected_event_type": "ELECTRICITY_BILL",
+    "expected_category": "FINANCE"
+  },
+  {
+    "id": 4,
+    "source": "SMS",
+    "text": "Your credit card bill of ₹15000 is due on 15 September",
+    "expected_event_type": "CREDIT_CARD_BILL",
+    "expected_category": "FINANCE"
+  },
+  {
+    "id": 5,
+    "source": "SMS",
+    "text": "HDFC card statement generated. Amount due Rs. 8,500 by 20/09/2026",
+    "expected_event_type": "CREDIT_CARD_BILL",
+    "expected_category": "FINANCE"
+  },
+  {
+    "id": 6,
+    "source": "SMS",
+    "text": "Reminder: your card payment due of ₹4200 tomorrow",
+    "expected_event_type": "CREDIT_CARD_BILL",
+    "expected_category": "FINANCE"
+  },
+  {
+    "id": 7,
+    "source": "SMS",
+    "text": "Your EMI of ₹5600 is due on 5th of this month",
+    "expected_event_type": "EMI_PAYMENT",
+    "expected_category": "FINANCE"
+  },
+  {
+    "id": 8,
+    "source": "SMS",
+    "text": "Loan installment of Rs. 12000 due tomorrow",
+    "expected_event_type": "EMI_PAYMENT",
+    "expected_category": "FINANCE"
+  },
+  {
+    "id": 9,
+    "source": "SMS",
+    "text": "EMI payment reminder: installment due on 22/09/2026",
+    "expected_event_type": "EMI_PAYMENT",
+    "expected_category": "FINANCE"
+  },
+  {
+    "id": 10,
+    "source": "SMS",
+    "text": "Your rent due of ₹18000 for this month, please pay before 5th",
+    "expected_event_type": "RENT_PAYMENT",
+    "expected_category": "FINANCE"
+  },
+  {
+    "id": 11,
+    "source": "SMS",
+    "text": "Monthly rent payment of Rs. 22000 pending",
+    "expected_event_type": "RENT_PAYMENT",
+    "expected_category": "FINANCE"
+  },
+  {
+    "id": 12,
+    "source": "SMS",
+    "text": "Your Netflix subscription renewal due tomorrow, Rs. 649",
+    "expected_event_type": "SUBSCRIPTION_PAYMENT",
+    "expected_category": "FINANCE"
+  },
+  {
+    "id": 13,
+    "source": "SMS",
+    "text": "Auto-renewal for your Spotify plan of ₹119 is due on 25 September",
+    "expected_event_type": "SUBSCRIPTION_PAYMENT",
+    "expected_category": "FINANCE"
+  },
+  {
+    "id": 14,
+    "source": "SMS",
+    "text": "Reminder: refill your prescription for BP medicine",
+    "expected_event_type": "MEDICINE_REFILL",
+    "expected_category": "MEDICAL"
+  },
+  {
+    "id": 15,
+    "source": "SMS",
+    "text": "Your prescription due for refill, please visit the pharmacy",
+    "expected_event_type": "MEDICINE_REFILL",
+    "expected_category": "MEDICAL"
+  },
+  {
+    "id": 16,
+    "source": "SMS",
+    "text": "You have an appointment with dr. sharma tomorrow at 10 AM",
+    "expected_event_type": "DOCTOR_APPOINTMENT",
+    "expected_category": "MEDICAL"
+  },
+  {
+    "id": 17,
+    "source": "SMS",
+    "text": "Consultation scheduled with Dr. Mehta on 22/09/2026",
+    "expected_event_type": "DOCTOR_APPOINTMENT",
+    "expected_category": "MEDICAL"
+  },
+  {
+    "id": 18,
+    "source": "SMS",
+    "text": "Your lab report ready for pickup at the diagnostic center",
+    "expected_event_type": "MEDICAL_REPORT",
+    "expected_category": "MEDICAL"
+  },
+  {
+    "id": 19,
+    "source": "SMS",
+    "text": "Medical report ready, please collect from the front desk",
+    "expected_event_type": "MEDICAL_REPORT",
+    "expected_category": "MEDICAL"
+  },
+  {
+    "id": 20,
+    "source": "SMS",
+    "text": "Your final exam is scheduled for 22 September",
+    "expected_event_type": "EXAM",
+    "expected_category": "EDUCATION"
+  },
+  {
+    "id": 21,
+    "source": "SMS",
+    "text": "Reminder: examination for Semester 4 begins tomorrow",
+    "expected_event_type": "EXAM",
+    "expected_category": "EDUCATION"
+  },
+  {
+    "id": 22,
+    "source": "SMS",
+    "text": "Your assignment due tomorrow, please submit before midnight",
+    "expected_event_type": "ASSIGNMENT",
+    "expected_category": "EDUCATION"
+  },
+  {
+    "id": 23,
+    "source": "SMS",
+    "text": "Homework due on 25/09/2026, submit through the portal",
+    "expected_event_type": "ASSIGNMENT",
+    "expected_category": "EDUCATION"
+  },
+  {
+    "id": 24,
+    "source": "SMS",
+    "text": "Your college fee payment of ₹45000 is due on 30 September",
+    "expected_event_type": "FEE_PAYMENT",
+    "expected_category": "EDUCATION"
+  },
+  {
+    "id": 25,
+    "source": "SMS",
+    "text": "Tuition due of Rs. 25000, please pay before due date",
+    "expected_event_type": "FEE_PAYMENT",
+    "expected_category": "EDUCATION"
+  },
+  {
+    "id": 26,
+    "source": "SMS",
+    "text": "Your gas cylinder booking confirmed, delivery in 2 days",
+    "expected_event_type": "GAS_PURCHASE",
+    "expected_category": "HOUSEHOLD"
+  },
+  {
+    "id": 27,
+    "source": "SMS",
+    "text": "LPG booking successful, cylinder will be delivered tomorrow",
+    "expected_event_type": "GAS_PURCHASE",
+    "expected_category": "HOUSEHOLD"
+  },
+  {
+    "id": 28,
+    "source": "SMS",
+    "text": "Your milk delivery subscription renews tomorrow",
+    "expected_event_type": "MILK_DELIVERY",
+    "expected_category": "HOUSEHOLD"
+  },
+  {
+    "id": 29,
+    "source": "SMS",
+    "text": "Your grocery order has been placed successfully",
+    "expected_event_type": "GROCERY",
+    "expected_category": "HOUSEHOLD"
+  },
+  {
+    "id": 30,
+    "source": "SMS",
+    "text": "Grocery delivery scheduled for tomorrow evening",
+    "expected_event_type": "GROCERY",
+    "expected_category": "HOUSEHOLD"
+  },
+  {
+    "id": 31,
+    "source": "SMS",
+    "text": "Low fuel alert, time to refuel your vehicle",
+    "expected_event_type": "FUEL",
+    "expected_category": "TRANSPORT"
+  },
+  {
+    "id": 32,
+    "source": "SMS",
+    "text": "Petrol prices updated in your area",
+    "expected_event_type": "FUEL",
+    "expected_category": "TRANSPORT"
+  },
+  {
+    "id": 33,
+    "source": "SMS",
+    "text": "Your car service due, please book an appointment",
+    "expected_event_type": "VEHICLE_SERVICE",
+    "expected_category": "TRANSPORT"
+  },
+  {
+    "id": 34,
+    "source": "SMS",
+    "text": "Bike service reminder: last serviced 6 months ago",
+    "expected_event_type": "VEHICLE_SERVICE",
+    "expected_category": "TRANSPORT"
+  },
+  {
+    "id": 35,
+    "source": "SMS",
+    "text": "Your vehicle insurance policy renewal due on 30/09/2026",
+    "expected_event_type": "VEHICLE_INSURANCE",
+    "expected_category": "TRANSPORT"
+  },
+  {
+    "id": 36,
+    "source": "SMS",
+    "text": "Car insurance expiring soon, renew before 25 September",
+    "expected_event_type": "VEHICLE_INSURANCE",
+    "expected_category": "TRANSPORT"
+  },
+  {
+    "id": 37,
+    "source": "SMS",
+    "text": "Your order placed successfully, order id: ORD12345",
+    "expected_event_type": "ORDER_PLACED",
+    "expected_category": "SHOPPING"
+  },
+  {
+    "id": 38,
+    "source": "SMS",
+    "text": "Order confirmed! Order id ORD98765, arriving soon",
+    "expected_event_type": "ORDER_PLACED",
+    "expected_category": "SHOPPING"
+  },
+  {
+    "id": 39,
+    "source": "SMS",
+    "text": "Your order has been shipped and is out for delivery",
+    "expected_event_type": "ORDER_SHIPPED",
+    "expected_category": "SHOPPING"
+  },
+  {
+    "id": 40,
+    "source": "SMS",
+    "text": "Good news! Your package has been shipped, order id ORD55555",
+    "expected_event_type": "ORDER_SHIPPED",
+    "expected_category": "SHOPPING"
+  },
+  {
+    "id": 41,
+    "source": "SMS",
+    "text": "Your order has been delivered, thank you for shopping with us",
+    "expected_event_type": "ORDER_DELIVERED",
+    "expected_category": "SHOPPING"
+  },
+  {
+    "id": 42,
+    "source": "SMS",
+    "text": "Refund of ₹500 has been initiated for your order",
+    "expected_event_type": "REFUND_INITIATED",
+    "expected_category": "SHOPPING"
+  },
+  {
+    "id": 43,
+    "source": "SMS",
+    "text": "Your refund processed, amount will reflect in 3-5 days",
+    "expected_event_type": "REFUND_INITIATED",
+    "expected_category": "SHOPPING"
+  },
+  {
+    "id": 44,
+    "source": "SMS",
+    "text": "Refund of Rs. 750 received in your account",
+    "expected_event_type": "REFUND_RECEIVED",
+    "expected_category": "SHOPPING"
+  },
+  {
+    "id": 45,
+    "source": "SMS",
+    "text": "Your replacement will be dispatched within 2 days",
+    "expected_event_type": "WAITING_REPLACEMENT",
+    "expected_category": "WAITING"
+  },
+  {
+    "id": 46,
+    "source": "SMS",
+    "text": "Replacement order confirmed for your defective item",
+    "expected_event_type": "WAITING_REPLACEMENT",
+    "expected_category": "WAITING"
+  },
+  {
+    "id": 47,
+    "source": "SMS",
+    "text": "Your certificate is pending approval from the registrar",
+    "expected_event_type": "WAITING_CERTIFICATE",
+    "expected_category": "WAITING"
+  },
+  {
+    "id": 48,
+    "source": "SMS",
+    "text": "Awaiting certificate issuance, please check after a week",
+    "expected_event_type": "WAITING_CERTIFICATE",
+    "expected_category": "WAITING"
+  },
+  {
+    "id": 49,
+    "source": "SMS",
+    "text": "Technician will visit your home tomorrow between 10-12 PM",
+    "expected_event_type": "WAITING_TECHNICIAN",
+    "expected_category": "WAITING"
+  },
+  {
+    "id": 50,
+    "source": "SMS",
+    "text": "Service technician assigned for your complaint",
+    "expected_event_type": "WAITING_TECHNICIAN",
+    "expected_category": "WAITING"
+  },
+  {
+    "id": 51,
+    "source": "SMS",
+    "text": "Your repayment pending, amount will be credited back soon",
+    "expected_event_type": "WAITING_REPAYMENT",
+    "expected_category": "WAITING"
+  },
+  {
+    "id": 52,
+    "source": "SMS",
+    "text": "Please register your warranty within 30 days of purchase",
+    "expected_event_type": "WARRANTY_REGISTRATION",
+    "expected_category": "WARRANTY"
+  },
+  {
+    "id": 53,
+    "source": "SMS",
+    "text": "Warranty registration required for your new appliance",
+    "expected_event_type": "WARRANTY_REGISTRATION",
+    "expected_category": "WARRANTY"
+  },
+  {
+    "id": 54,
+    "source": "SMS",
+    "text": "Your warranty is expiring in 10 days, renew if needed",
+    "expected_event_type": "WARRANTY_EXPIRY",
+    "expected_category": "WARRANTY"
+  },
+  {
+    "id": 55,
+    "source": "SMS",
+    "text": "Warranty ending soon for your laptop purchase",
+    "expected_event_type": "WARRANTY_EXPIRY",
+    "expected_category": "WARRANTY"
+  },
+  {
+    "id": 56,
+    "source": "SMS",
+    "text": "hey want to grab lunch tomorrow?",
+    "expected_event_type": "UNKNOWN_EVENT",
+    "expected_category": "UNKNOWN"
+  },
+  {
+    "id": 57,
+    "source": "SMS",
+    "text": "Happy birthday! Hope you have a great day",
+    "expected_event_type": "UNKNOWN_EVENT",
+    "expected_category": "UNKNOWN"
+  },
+  {
+    "id": 58,
+    "source": "SMS",
+    "text": "asdkjaskjd random text with no meaning",
+    "expected_event_type": "UNKNOWN_EVENT",
+    "expected_category": "UNKNOWN"
+  },
+  {
+    "id": 59,
+    "source": "SMS",
+    "text": "",
+    "expected_event_type": "UNKNOWN_EVENT",
+    "expected_category": "UNKNOWN",
+    "note": "empty input edge case"
+  },
+  {
+    "id": 60,
+    "source": "SMS",
+    "text": "electricity bill due",
+    "expected_event_type": "ELECTRICITY_BILL",
+    "expected_category": "FINANCE",
+    "note": "missing amount and date"
+  },
+  {
+    "id": 61,
+    "source": "SMS",
+    "text": "your bill of ₹2850 is due",
+    "expected_event_type": "UNKNOWN_EVENT",
+    "expected_category": "UNKNOWN",
+    "note": "no specific event keyword, generic bill wording"
+  },
+  {
+    "id": 62,
+    "source": "SMS",
+    "text": "your electricity board bill of 2850 is due tomorrow",
+    "expected_event_type": "ELECTRICITY_BILL",
+    "expected_category": "FINANCE",
+    "note": "duplicate of an earlier sample; used to test duplicate detection when sent twice"
+  },
+  {
+    "id": 63,
+    "source": "SMS",
+    "text": "!!!???...",
+    "expected_event_type": "UNKNOWN_EVENT",
+    "expected_category": "UNKNOWN",
+    "note": "only punctuation, no real content"
+  },
+  {
+    "id": 64,
+    "source": "SMS",
+    "text": "Your order id: ORD11111 has been shipped, arriving 31/02/2026",
+    "expected_event_type": "ORDER_SHIPPED",
+    "expected_category": "SHOPPING",
+    "note": "invalid date (Feb 31 doesn't exist) — due_date should be null"
+  },
+  {
+    "id": 65,
+    "source": "SMS",
+    "text": "The bank has reminded you that your monthly instalment of Rs 7,850 is due this Friday.",
+    "expected_event_type": "EMI_PAYMENT",
+    "expected_category": "FINANCE",
+    "note": "Uses instalment spelling and avoids the exact word EMI."
+  },
+  {
+    "id": 66,
+    "source": "SMS",
+    "text": "Please collect your diagnostic test results from the hospital reception after 4 PM.",
+    "expected_event_type": "MEDICAL_REPORT",
+    "expected_category": "MEDICAL",
+    "note": "Uses test results instead of the phrase medical report."
+  },
+  {
+    "id": 67,
+    "source": "SMS",
+    "text": "The courier team has handed over your parcel and it should reach you shortly.",
+    "expected_event_type": "ORDER_SHIPPED",
+    "expected_category": "SHOPPING",
+    "note": "Adversarial shipping wording without the exact phrase order shipped."
+  }
+]
